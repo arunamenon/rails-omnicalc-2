@@ -1,14 +1,12 @@
 class DivisionController < ApplicationController
-  def show_division_form
-    render({ :template => "division_templates/division_form" })
+  def new
+    render template: "div_templates/division_for"
   end
 
-  def divide_these
-    @first_number = params.fetch("first_num")
+  def result
+    @first_number = params.fetch("FirstNum").to_f
     @second_number = params.fetch("second_num").to_f
-
-    @result =  first_number / @second_number
-
-    render({ :template => "division_templates/divide_result" })
+    @result = @first_number / @second_number
+    render template: "div_templates/divide_results"
   end
 end
