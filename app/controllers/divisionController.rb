@@ -4,7 +4,7 @@ class DivisionController < ApplicationController
   end
 
   def result
-    @first_number = params.fetch("FirstNum").to_f
+    @first_number = params.fetch("first_number").to_f
     @second_number = params.fetch("second_num").to_f
     @result = @first_number / @second_number
     render template: "div_templates/divide_results"
